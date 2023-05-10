@@ -10,7 +10,7 @@
   "require": {
     "php" : "~8",
     "ext-mbstring": "*",
-    "ext-yaml": "*",
+    "ext-yaml": "*"
   },
   "autoload": {
     "psr-4": {
