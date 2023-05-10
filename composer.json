@@ -1,0 +1,22 @@
+{
+  "name": "one23/laravel-translation-yaml",
+  "type": "library",
+  "homepage": "https://github.com/FlexIDK/laravel-translation-yaml",
+  "description": "Support YAML in Laravel translation files",
+  "license": "MIT",
+  "version": "0.1",
+  "authors": [
+  ],
+  "require": {
+    "php" : "~8",
+    "ext-mbstring": "*",
+    "ext-yaml": "*",
+  },
+  "autoload": {
+    "psr-4": {
+      "One23\\LaravelTranslationYaml\\": "src"
+    }
+  },
+  "extra": {
+  }
+}
