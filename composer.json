@@ -8,9 +8,10 @@
   "authors": [
   ],
   "require": {
-    "php" : "~8",
+    "php" : ">=8",
     "ext-mbstring": "*",
-    "ext-yaml": "*"
+    "ext-yaml": "*",
+    "laravel/framework": ">=v9"
   },
   "autoload": {
     "psr-4": {
