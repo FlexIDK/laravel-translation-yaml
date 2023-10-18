@@ -4,7 +4,7 @@
   "homepage": "https://github.com/FlexIDK/laravel-translation-yaml",
   "description": "Support YAML in Laravel translation files",
   "license": "MIT",
-  "version": "v0.1.1",
+  "version": "v0.1.2",
   "authors": [
   ],
   "require": {

@@ -96,7 +96,10 @@ class FileLoader extends \Illuminate\Translation\FileLoader
     public function load($locale, $group, $namespace = null)
     {
         if ($group === '*' && $namespace === '*') {
-            return $this->loadYamlPaths($locale);
+            return array_merge(
+                $this->loadJsonPaths($locale),
+                $this->loadYamlPaths($locale),
+            );
         }
 
         return parent::load($locale, $group, $namespace);
