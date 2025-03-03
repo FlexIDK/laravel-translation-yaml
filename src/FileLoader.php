@@ -20,7 +20,8 @@ class FileLoader extends \Illuminate\Translation\FileLoader
         return $this->yamlPaths;
     }
 
-    protected function tryLoad(string $path, string $ext = null) {
+    protected function tryLoad(string $path, ?string $ext = null)
+    {
         $crc = md5($path);
         if (isset(self::$cache[$crc])) {
             return self::$cache[$crc];
@@ -80,7 +81,7 @@ class FileLoader extends \Illuminate\Translation\FileLoader
     protected function loadYamlPaths(string $locale)
     {
         return collect(array_merge($this->yamlPaths, $this->paths))
-            ->reduce(function ($output, $path) use ($locale) {
+            ->reduce(function($output, $path) use ($locale) {
                 $res = $this->tryLoad("{$path}/{$locale}", 'yaml');
 
                 if (is_array($res)) {
@@ -108,7 +109,7 @@ class FileLoader extends \Illuminate\Translation\FileLoader
     protected function loadNamespaceOverrides(array $lines, $locale, $group, $namespace)
     {
         return collect($this->paths)
-            ->reduce(function ($output, $path) use ($lines, $locale, $group, $namespace) {
+            ->reduce(function($output, $path) use ($lines, $locale, $group, $namespace) {
                 $res = $this->tryLoad("{$path}/vendor/{$namespace}/{$locale}/{$group}");
                 if (is_array($res)) {
                     $lines = array_replace_recursive($lines, $res);
@@ -121,7 +122,7 @@ class FileLoader extends \Illuminate\Translation\FileLoader
     protected function loadPaths(array $paths, $locale, $group)
     {
         return collect($paths)
-            ->reduce(function ($output, $path) use ($locale, $group) {
+            ->reduce(function($output, $path) use ($locale, $group) {
                 $res = $this->tryLoad("{$path}/{$locale}/{$group}");
                 if (is_array($res)) {
                     $output = array_replace_recursive($output, $res);
@@ -130,5 +131,4 @@ class FileLoader extends \Illuminate\Translation\FileLoader
                 return $output;
             }, []);
     }
-
 }
