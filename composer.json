@@ -4,14 +4,14 @@
   "homepage": "https://github.com/FlexIDK/laravel-translation-yaml",
   "description": "Support YAML in Laravel translation files",
   "license": "MIT",
-  "version": "v0.1.4",
+  "version": "v0.2.0",
   "authors": [
   ],
   "require": {
-    "php" : "^8.0|^8.1|^8.2|^8.3|^8.4",
+    "php" : "^8.0|^8.1|^8.2|^8.3|^8.4|^8.5",
     "ext-mbstring": "*",
     "ext-yaml": "*",
-    "illuminate/translation": "^v9|^v10|^v11|^v12"
+    "illuminate/translation": "^v9|^v10|^v11|^v12|^v13"
   },
   "require-dev": {
     "laravel/pint": "^v1",
